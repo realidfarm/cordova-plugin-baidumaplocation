@@ -1,28 +1,5 @@
 # 百度地图定位Cordova插件，支持Android，IOS，ionic 1x 2x 均可使用
 
-### UPDATE:
-* v4.0.2 修复Android Studio项目或新版本Cordova找不到so文件的问题
-* v4.0.1 优化了ionic3x的兼容性，升级对应百度定位依赖库（v7.5@Android）
-* v3.2.0 升级对应百度定位依赖库（v7.2@Android,v3.3.4@IOS）
-
-### 可以在此地址查看[ionic3_example](https://github.com/aruis/testbmap-cordova-ionic3)
-
-__致谢: 本插件Android开发主要参考 [cordova-qdc-baidu-location](https://github.com/liangzhenghui/cordova-qdc-baidu-location),感谢[liangzhenghui](https://github.com/liangzhenghui)；IOS开发主要参考[cordova-plugin-bdlocation](https://github.com/wilhantian/cordova-plugin-bdlocation)，感谢[wilhantian](https://github.com/wilhantian)__
-
-
-__由于[cordova-qdc-baidu-location](https://github.com/liangzhenghui/cordova-qdc-baidu-location)明确表示没有IOS版，所以才有了重新开发一版兼容Android与IOS的想法。这样才能保证不同平台获取的坐标系是基于同一编码的，方便逻辑的统一性。__
-
-__Android 版原作者[mrwutong](https://github.com/mrwutong)的话__
-
->#### Android版为什么不使用官方的_cordova-plugin-geolocation_插件
->最新版的插件已经删除掉的Android版定位的代码，改为基于系统浏览器(chrome内核)进行定位。
->
->为什么这样做，也有人问过同样的问题，作者的回答是这样比原生定位更快更准确。
->
->但经过测试后，发现根本无法定位，几经调查发现跟貌似国内网络有关系，原因相信大家都懂的，此过省略好几个字。。。。
->
->__此插件就这么诞生了__
-
 #### 零，版本
 基于百度地图Android版定位SDK（v7.2）以及百度地图IOS SDK （v3.3.4）
 
@@ -38,7 +15,7 @@ __Android 版原作者[mrwutong](https://github.com/mrwutong)的话__
 #### 二，安装插件
 
 ```shell
-cordova plugin add cordova-plugin-baidumaplocation --variable ANDROID_KEY="<API_KEY_ANDROID>" --variable IOS_KEY="<API_KEY_IOS>"
+cordova plugin add https://github.com/realidfarm/cordova-plugin-baidumaplocation.git --variable ANDROID_KEY="<API_KEY_ANDROID>" --variable IOS_KEY="<API_KEY_IOS>"
 # 此处的API_KEY_XX来自于第一步，直接替换<API_KEY_XX>，也可以最后跟 --save 参数，将插件信息保存到config.xml中
 # 如果只需要Android端或者IOS端，可以只填写一个相应的AK，但是都不填肯定不行
 ```
